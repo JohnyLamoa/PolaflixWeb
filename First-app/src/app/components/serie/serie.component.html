@@ -1,48 +1,25 @@
-<html>
-<head>
-<style>
-div {
-  background-color: lightgrey;
-  width: 300px;
-  border: 15px solid green;
-  padding: 50px;
-  margin: 20px;
-  border-radius: 25px;
-}
-</style>
-</head>
+<div class="content">
+  <table style="border:none">
+    <tr>
+      <th>Titulo</th>
+      <th>Categoria</th>
+      <th>Temporadas</th>
+      <th>Sinopsis</th>
+      <th>Actores</th>
 
-<div>
-  <h1>Empezadas</h1>
-  <mat-list role="list">
-    <mat-list-item role="listitem">
-      <a href="/">
-                      Heheheeh
-                    </a>
-    </mat-list-item>
-    <mat-list-item role="listitem">invincible</mat-list-item>
-  </mat-list>
-</div>
-<div>
-  <h1>Pendientes</h1>
-  <mat-list role="list">
-    <mat-list-item role="listitem">The Boys</mat-list-item>
-    <mat-list-item role="listitem">Better Call Saul</mat-list-item>
-    <mat-list-item role="listitem">Los Soprano</mat-list-item>
-  </mat-list>
-</div>
-<div>
-  <h1>Terminadas</h1>
-  <mat-list role="list">
-    <mat-list-item role="listitem">Breaking Bad</mat-list-item>
-    <mat-list-item role="listitem">Como Conocí A Vuestra Madre</mat-list-item>
-    <mat-list-item role="listitem">Friends</mat-list-item>
-  </mat-list>
-</div>
+    </tr>
+    <tr *ngFor=" let s of series">
+      <td> {{s.titulo}}</td>
+      <td>{{s.tipoDeSerie}}</td>
+      <td> {{s.temporadasDeLaSerie.length}} </td>
+      <td>{{s.sinopsis}}</td>
+      <td> <div> <span style="display: block;" *ngFor=" let a of s.actoresPrincipales">{{a.nombre}}, </span></div>  </td>
+      <td (click)="visualizaCapitulo(s.ID_Serie,'1','1')" title="Play" style="cursor: pointer; margin-left: 10px; display: inline-block;border: none;">   <span class="material-icons"> play_circle</span></td>
+    </tr>
+    <button (click)='visualizaCapitulo("1", "1", "1")'>Add to Visualizadas</button>
+    <button (click)='addToPendientes("1")'>Add to Pendientes</button>
 
-<hr>
-<mat-action-list>
-  <button mat-list-item> Save </button>
-  <button mat-list-item> Undo </button>
-</mat-action-list>
-</html>
+  </table>
+  <span id="tituloserie" style="margin-top:100px;"></span>
+  <table id="tablaEpisodios" class="tablaespecial" style="display:none; border: 1px solid black;"><tbody><tr></tr></tbody></table>
+</div>

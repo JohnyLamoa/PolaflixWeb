@@ -5,6 +5,7 @@ import {Component} from '@angular/core';
  */
 @Component({
   selector: 'listaSeries',
-  templateUrl: 'listaSeries.component.html'
+  templateUrl: 'listaSeries.component.html',
+  styleUrls: ['./listaSeries.component.css']
 })
 export class ListaSeriesComponent{}

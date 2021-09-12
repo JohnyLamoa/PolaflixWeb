@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Jugando con Javascript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.00">
+  <link rel="stylesheet" href="miniWeb.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+  <script src="simpleMenu/simpleMenu.component.angularJS.js"></script>
+  <script src="miniWeb(AngularJS).js"></script>
+  <script src="miniWeb.config.js"></script>
+</head>
+<body ng-app="miniWeb">
+  <h1 class="header"> Jugando un poco con Javascript</h1>
+  <div class="bodyContainer" ng-controller="miniWebController as ctrl">
+    <div class="sidebar">
+      <simple-menu menu-entries='colorEntries' on-entry-changed='ctrl.onColorEntryActivated(entryValue)'></simple-menu>
+      <div class="menuSeparator"></div>
+      <simple-menu menu-entries='pageEntries' on-entry-changed='ctrl.onPageEntryActivated(entryValue)'></simple-menu>
+    </div>
+    <div class="content" ng-style="{color: activeColor}" ng-view>
+    </div>
+  </div>
+</body>
+</html>

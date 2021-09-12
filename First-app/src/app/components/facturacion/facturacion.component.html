@@ -1,5 +1,23 @@
-<div class="container">
-  <div tabindex="0" class="cell"> a</div>
-  <div tabindex="1" class="cell"> b</div>
-  <div tabindex="2" class="cell"> c</div>
+<div class="content">
+
+
+  <table style="border:none">
+    <tr>
+      <th>Fecha</th>
+      <th>Serie</th>
+      <th>Temporada</th>
+      <th>Capitulo</th>
+      <th>Importe</th>
+    </tr>
+    <tr *ngFor=" let f of datosFacturacion">
+      <td> {{f.fechaVisualizacion}}</td>
+      <td> {{f.serie.titulo}}</td>
+      <td> {{f.numTemporada}}</td>
+      <td> {{f.numCapitulo}}</td>
+      <td> {{f.importe}}</td>
+    </tr>
+
+  </table>
+  <span id="tituloserie" style="margin-top:100px;"></span>
+  <table id="tablaEpisodios" class="tablaespecial" style="display:none; border: 1px solid black;"><tbody><tr></tr></tbody></table>
 </div>
