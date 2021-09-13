@@ -1,15 +1,16 @@
 <div class="content">
 
-
-  <table style="border:none">
+<p>Mes Actual: {{getMes()}}</p>
+  <table style="border:none" *ngIf="facturaActual>=0">
     <tr>
       <th>Fecha</th>
       <th>Serie</th>
       <th>Temporada</th>
       <th>Capitulo</th>
       <th>Importe</th>
+
     </tr>
-    <tr *ngFor=" let f of datosFacturacion">
+    <tr *ngFor=" let f of datosFacturacion[facturaActual].elementosFactura">
       <td> {{f.fechaVisualizacion}}</td>
       <td> {{f.serie.titulo}}</td>
       <td> {{f.numTemporada}}</td>
@@ -20,4 +21,6 @@
   </table>
   <span id="tituloserie" style="margin-top:100px;"></span>
   <table id="tablaEpisodios" class="tablaespecial" style="display:none; border: 1px solid black;"><tbody><tr></tr></tbody></table>
+  <button (click)='retrocedeMes()'>RetrocedeMes</button>
+  <button (click)='avanzaMes()'>AvanzaMes</button>
 </div>
