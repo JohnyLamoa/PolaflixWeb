@@ -14,9 +14,9 @@
       <td> {{s.temporadasDeLaSerie.length}} </td>
       <td>{{s.sinopsis}}</td>
       <td> <div> <span style="display: block;" *ngFor=" let a of s.actoresPrincipales">{{a.nombre}}, </span></div>  </td>
-      <td (click)="visualizaCapitulo(s.ID_Serie,'1','1')" title="Play" style="cursor: pointer; margin-left: 10px; display: inline-block;border: none;">   <span class="material-icons"> play_circle</span></td>
+      <td (click)="visualizaCapitulo(s.ID_Serie, 1, 1)" title="Play" style="cursor: pointer; margin-left: 10px; display: inline-block;border: none;">   <span class="material-icons"> play_circle</span></td>
     </tr>
-    <button (click)='visualizaCapitulo("1", "1", "1")'>Add to Visualizadas</button>
+    <button (click)='visualizaCapitulo(1, 1, 3)'>Add to Visualizadas</button>
     <button (click)='addToPendientes("1")'>Add to Pendientes</button>
 
   </table>
